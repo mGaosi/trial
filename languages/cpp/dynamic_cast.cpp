@@ -1,4 +1,11 @@
-#pragma once
+/**
+ * @file dynamic_cast.cpp
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-24
+ * 
+ * trail dynamic_cast
+ */
 
 class Base
 {
