@@ -20,3 +20,6 @@ set_property(TARGET function_overloading PROPERTY FOLDER "languages/cpp")
 
 add_executable(function_overriding function_overriding.cpp)
 set_property(TARGET function_overriding PROPERTY FOLDER "languages/cpp")
+
+add_executable(friendly friendly.cpp)
+set_property(TARGET friendly PROPERTY FOLDER "languages/cpp")
