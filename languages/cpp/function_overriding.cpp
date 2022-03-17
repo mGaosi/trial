@@ -40,7 +40,7 @@ public:
 };
  
 // Driver code
-int main()
+int main(int argc, char* args[])
 {
     DerivedClass dr;
     BaseClass &bs = dr;

@@ -16,7 +16,7 @@ void test(int);
 void test(float);
 void test(int, float);
  
-int main()
+int main(int argc, char* args[])
 {
     int a = 5;
     float b = 5.5;
