@@ -12,7 +12,7 @@
 
 class Rect
 {
-    friend class Measure;
+    friend class Area;
 public:
     explicit Rect(int nWidth, int nHeight)
         : m_nWidth(nWidth)
@@ -29,7 +29,7 @@ private:
 };
 
 class Round;
-class Measure
+class Area
 {
 public:
     static int OfRect(Rect& obj)
@@ -51,13 +51,13 @@ private:
     {
         return m_nRadius;
     }
-    friend double Measure::OfRound(Round& obj);
+    friend double Area::OfRound(Round& obj);
 
 private:
     int m_nRadius;
 };
 
-double Measure::OfRound(Round& obj)
+double Area::OfRound(Round& obj)
 {
     // impl to be after the friend declaration
     return obj.Radius() * 3.1415926;
@@ -66,9 +66,9 @@ double Measure::OfRound(Round& obj)
 int main(int argc, char* args[])
 {
     Rect rect(3, 4);
-    std::cout << "measure of rectangle is: "  << Measure::OfRect(rect) << std::endl;
+    std::cout << "area of rectangle is: "  << Area::OfRect(rect) << std::endl;
     Round round(4);
-    std::cout << "round of rectangle is: " << Measure::OfRound(round) << std::endl;
+    std::cout << "area of round is: " << Area::OfRound(round) << std::endl;
     return 0;
 }
 
