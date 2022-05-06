@@ -8,8 +8,18 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 message(STATUS "Configure project[${PROJECT_NAME}]: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_executable(sizeof sizeof.c)
-set_property(TARGET sizeof PROPERTY FOLDER "languages/c")
+list(APPEND SRC_FILES)
 
-add_executable(zero_length_array zero_length_array.c)
-set_property(TARGET zero_length_array PROPERTY FOLDER "languages/c")
+macro(add_sub_project project)
+    add_executable(${project} "${project}.c")
+    set_property(TARGET ${project} PROPERTY FOLDER "languages/c")
+    list(APPEND SRC_FILES "${project}.c")
+endmacro()
+
+add_sub_project(sizeof)
+
+add_sub_project(zero_length_array)
+
+add_sub_project(alignment)
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SRC_FILES})

@@ -9,17 +9,24 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 message(STATUS "Configure project[${PROJECT_NAME}]: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_executable(dynamic_cast dynamic_cast.cpp)
-set_property(TARGET dynamic_cast PROPERTY FOLDER "languages/cpp")
+list(APPEND SRC_FILES)
 
-add_executable(function_hiding function_hiding.cpp)
-set_property(TARGET function_hiding PROPERTY FOLDER "languages/cpp")
+macro(add_sub_project project)
+    add_executable(${project} "${project}.cpp")
+    set_property(TARGET ${project} PROPERTY FOLDER "languages/cpp")
+    list(APPEND SRC_FILES "${project}.cpp")
+endmacro()
 
-add_executable(function_overloading function_overloading.cpp)
-set_property(TARGET function_overloading PROPERTY FOLDER "languages/cpp")
+add_sub_project(dynamic_cast)
 
-add_executable(function_overriding function_overriding.cpp)
-set_property(TARGET function_overriding PROPERTY FOLDER "languages/cpp")
+add_sub_project(function_hiding)
 
-add_executable(friendly friendly.cpp)
-set_property(TARGET friendly PROPERTY FOLDER "languages/cpp")
+add_sub_project(function_overloading)
+
+add_sub_project(function_overriding)
+
+add_sub_project(friendly)
+
+add_sub_project(value_reference)
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SRC_FILES})
