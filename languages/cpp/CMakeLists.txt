@@ -29,4 +29,6 @@ add_sub_project(friendly)
 
 add_sub_project(value_reference)
 
+add_sub_project(static)
+
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SRC_FILES})
