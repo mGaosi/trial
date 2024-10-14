@@ -13,6 +13,7 @@ using namespace std;
  
 // overloaded functions
 void test(int);
+//int test(int); error C2556
 void test(float);
 void test(int, float);
  
