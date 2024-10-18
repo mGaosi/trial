@@ -1,5 +1,3 @@
-#pragma once
-
 /*
 * Array of Zero Length
 * https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
@@ -44,7 +42,8 @@ int main(int argc, char* args[])
             // OK
             pStr->pData[0] = 0;
             // C2106
-            str.pData = pBuf;
+            //char pBuf[] = "";
+            //pStr->pData = pBuf;
         }
         free(pStr);
     }
