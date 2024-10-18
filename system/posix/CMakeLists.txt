@@ -9,8 +9,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 message(STATUS "Configure project[${PROJECT_NAME}]: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_executable(fork fork.cpp)
-set_property(TARGET fork PROPERTY FOLDER "system/posix")
-
-add_executable(mmap mmap.cpp)
-set_property(TARGET mmap PROPERTY FOLDER "system/posix")
+gen_executable("system/posix")

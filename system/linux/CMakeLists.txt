@@ -9,6 +9,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 message(STATUS "Configure project[${PROJECT_NAME}]: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_executable(thread_affinity thread_affinity.cpp)
-set_property(TARGET thread_affinity PROPERTY FOLDER "system/linux")
+gen_executable("system/linux")
+
 target_link_libraries(thread_affinity pthread)
